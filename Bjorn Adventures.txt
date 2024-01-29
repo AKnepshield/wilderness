@@ -1,0 +1,75 @@
+Bjorn's Adventures 
+
+
+
+
+
+
+
+
+participant bjornData.js
+participant adventure.js
+participant bjornFunctions.js
+
+adventure.js->bjornData.js: invoking trails, rivers, wildlife to get all data
+bjornData.js-->adventure.js:giving adventure.js all the data it needs and plugs it into the appropriate functions
+
+loop info
+adventure.js->bjornFunctions.js: invoke totalTrailMiles for length of trail
+end
+bjornFunctions.js-->adventure.js: Get total length of trails in miles
+
+note right of adventure.js:Display total length of trail in miles
+loop info
+adventure.js->bjornFunctions.js:invoke shortestTrail
+bjornFunctions.js-->adventure.js: Get length of shortest trail in miles
+
+end
+note right of adventure.js:Display length of shortest trail in miles
+loop info
+adventure.js->bjornFunctions.js:invoke longTrail for length of longest trail
+bjornFunctions.js-->adventure.js: Get total length of longest trail in miles
+
+end
+note right of adventure.js:Display length of longest trail in miles
+loop info
+adventure.js->bjornFunctions.js:invoke totalRiverMiles
+bjornFunctions.js-->adventure.js: Get length of total river miles
+
+end
+note right of adventure.js:Display length of total miles of all rivers
+loop info
+adventure.js->bjornFunctions.js: invoke shortestRiver for shortest river
+bjornFunctions.js-->adventure.js: Get length of shortest river in miles
+
+end
+note right of adventure.js:Display length of shortest river in miles
+loop info
+adventure.js->bjornFunctions.js:invoke longestRiver to get length of longest river
+bjornFunctions.js-->adventure.js: give length of longest river in miles
+
+end
+note right of adventure.js:Display longest river
+loop info
+adventure.js->bjornFunctions.js:invoke cheapeastTrails to get list of cheapest trails
+bjornFunctions.js-->adventure.js: gives list of all trails with only 1 $ which signifies cheap trail
+
+end
+note right of adventure.js:Display indented list of cheapest trails with each trail on new line
+loop info
+adventure.js->bjornFunctions.js:invoke mostExpensiveTrails to get list of trails with 4 or mort $
+bjornFunctions.js-->adventure.js: give list of most expensive trails
+
+end
+note right of adventure.js:Display indented list of most expensive trails with each trail on new line
+loop info
+adventure.js->bjornFunctions.js:invoke trailDetails to get details from the trails array
+bjornFunctions.js-->adventure.js: gives name, length, starting/ending point and highlighted plant of trail
+
+end
+note right of adventure.js:Display details of trails
+loop info
+adventure.js->bjornFunctions.js:invoke riverDetails to get details from rivers array
+bjornFunctions.js-->adventure.js: gives river name, starting/ending longitude/latitude, length and unique fish of rivers
+end
+note right of adventure.js:Display details of rivers

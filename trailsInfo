@@ -1,0 +1,83 @@
+const { trails } = require("./bjornData.js")
+
+const totalTrailMiles = (trails) => {
+    let total = 0
+    for (const trail of trails) {
+        total += trail.length
+    }
+
+    return total
+}
+
+// Get the shortest of all trails
+const shortestTrail = (trails) => {
+    let shortest = 100
+    for (const trail of trails) {
+        if(trail.length < shortest) {
+            shortest = trail.length
+        }
+    }
+
+    return shortest
+}
+
+// Get the longest of all trails
+const longTrail = (allTrails) => {
+    let longest = 0
+    for (const trail of allTrails) {
+        if(trail.length > longest) {
+            longest = trail.length
+        }
+    }
+
+    return longest
+}
+
+const cheapestTrails = (cheapTrailsArray) => {
+    
+    var cheapTrailList = []
+
+    for (const trails of cheapTrailsArray) {
+
+        if (trails.price.length < 2) {
+            cheapTrailList.push(trails.trailName)
+        }
+    }
+
+    return cheapTrailList
+}
+
+const mostExpensiveTrails = (trailsArray) => {
+
+    var expensiveTrailList = []
+
+    for (const trail of trailsArray) {
+
+        if (trail.price.length >= 4) {
+            expensiveTrailList.push(trail.trailName)
+        }
+    }
+    return expensiveTrailList
+}
+
+// iterate each trail
+// gather details
+// output trail name with details
+// for loop
+// console log relevant details
+
+
+const trailDetails = (trailsArray) => {
+
+    for (const trail of trailsArray) {
+    
+        console.log(`${trail.trailName} starts at [${trail.latitude} ${trail.longitude}] and is ${trail.length} miles long.  The highlighted plant for the trip is ${trail.plantHighlight}\n`)
+
+
+    }
+
+}
+
+module.exports = {
+    totalTrailMiles, shortestTrail, longTrail, cheapestTrails, mostExpensiveTrails, trailDetails
+}
